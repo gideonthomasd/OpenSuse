@@ -240,7 +240,8 @@ class Commands:
 	
 	def get_ls(self):
 		return check_output(['/home/phil/.config/qtile/weather.sh']).decode("utf-8").replace("\n","")
-
+	def get_ls2(self):
+		return check_output(['/home/phil/.config/qtile/mem.sh']).decode("utf-8").replace("\n","")
 commands = Commands()
 
 #def open_weather(qtile):
@@ -529,21 +530,35 @@ screens = [
                 widget.TextBox(
                     text="",
                     font="Ubuntu Mono",
-                    fontsize=27,
+                    fontsize=30,
                     foreground=colors[0],
                     background=colors[8],
                     padding=0,
                     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("lxterminal -e htop")},
                 ),
 
-                widget.Memory(
-                    background=colors[8],
+            #    widget.Memory(
+             #       background=colors[8],
+             #       foreground=colors[0],
+             #       font="Ubuntu Mono",
+             #       fontsize=22,
+             #       format = '{MemUsed}M/{MemTotal}M',
+                  ##  format='{MemUsed: .0f} MB  ',
+             #       mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("lxterminal -e htop")},
+             #   ),
+                
+                widget.GenPollText(
+					font="Ubuntu Mono",
+                    fontsize='22',
+                    #mouse_callbacks={'Button1' : openweather},
+                    func = commands.get_ls2,
+                    update_interval=2,
+                    background = colors[8],
                     foreground=colors[0],
-                    font="Ubuntu Mono",
-                    fontsize=22,
-                    format='{MemUsed: .0f} MB  ',
-                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("lxterminal -e htop")},
-                ),
+                   mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('lxterminal -e "htop"')},
+                    #mouse_callbacks={'Button1': open_weather},
+                    ),
+                
 
                # widget.TextBox(
                #     text='\ue0be',
