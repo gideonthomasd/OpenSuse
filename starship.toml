@@ -81,7 +81,8 @@ style = "bold green"
 
 [time]
 time_format = "%T"
-format = "🕙 $time($style) "
+#format = "🕙 $time($style) "
+format = " 漢 $time($style) "
 style = "bright-white"
 disabled = false
 
