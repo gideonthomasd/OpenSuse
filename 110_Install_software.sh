@@ -1,7 +1,7 @@
 #!/bin/bash
 #sudo zypper addrepo https://download.opensuse.org/repositories/openSUSE:Factory/standard/openSUSE:Factory.repo
 #sudo zypper refresh
-sudo zypper install yt-dlp mpv jgmenu vlc lxappearance yaru-icon-theme picom rofi neofetch ruby3.1-rubygem-lolcat htop calcurse xfce4-terminal feh font-manager geany NetworkManager-applet dracula-gtk-theme
+sudo zypper install yt-dlp mpv jgmenu vlc lxappearance yaru-icon-theme picom rofi neofetch ruby3.1-rubygem-lolcat htop calcurse xfce4-terminal feh font-manager geany NetworkManager-applet dracula-gtk-theme lxtask pavucontrol
 #sudo zypper install vlc-lang-3.0.17.4-362.2.noarch.rpm 
 curl -sS https://starship.rs/install.sh | sh
 
